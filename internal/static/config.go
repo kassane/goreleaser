@@ -37,3 +37,8 @@ var UVExampleConfig []byte
 //
 //go:embed config.poetry.yaml
 var PoetryExampleConfig []byte
+
+// Ldc2ExampleConfig is the config used within goreleaser init --lang ldc2.
+//
+//go:embed config.ldc2.yaml
+var Ldc2ExampleConfig []byte

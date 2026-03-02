@@ -55,6 +55,9 @@ func newInitCmd() *initCmd {
 			case "zig":
 				example = static.ZigExampleConfig
 				gitignoreLines = append(gitignoreLines, ".intentionally-empty-file.o", "zig-out/", ".zig-cache/")
+			case "d":
+				example = static.Ldc2ExampleConfig
+				gitignoreLines = append(gitignoreLines, ".dub/", "dub-out/")
 			case "rust":
 				example = static.RustExampleConfig
 				gitignoreLines = append(gitignoreLines, ".intentionally-empty-file.o", "target/")
@@ -105,7 +108,7 @@ func newInitCmd() *initCmd {
 	_ = cmd.RegisterFlagCompletionFunc(
 		"language",
 		cobra.FixedCompletions(
-			[]string{"go", "bun", "deno", "rust", "zig"},
+			[]string{"go", "bun", "deno", "d", "rust", "zig"},
 			cobra.ShellCompDirectiveDefault,
 		),
 	)
@@ -159,6 +162,7 @@ func langDetect() string {
 		"rust": "Cargo.toml",
 		"bun":  "bun.lockb",
 		"deno": "deno.json",
+		"d": "dub.json",
 	} {
 		if _, err := os.Stat(file); err == nil {
 			log.Info("project contains a " + code(file) + " file, using default " + code(lang) + " configuration")

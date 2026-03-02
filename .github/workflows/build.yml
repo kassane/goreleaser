@@ -78,6 +78,9 @@ jobs:
       - uses: mlugg/setup-zig@d1434d08867e3ee9daa34448df10607b98908d29 # v2.2.1
       - uses: oven-sh/setup-bun@3d267786b128fe76c2f16a390aa2448b815359f3 # v2.1.2
       - uses: denoland/setup-deno@e95548e56dfa95d4e1a28d6f422fafe75c4c26fb # v2.0.3
+      - uses: dlang-community/setup-dlang@d7d85fcde7c4cd5f9a6618fce1bccc316e1e910b #1.2.0
+        with:
+          compiler: ldc-latest
       - uses: cargo-bins/cargo-binstall@7691a5b29cda4f5499b819e5618012ba4b6c3334 # v1.17.5
       - name: setup-cargo
         run: |

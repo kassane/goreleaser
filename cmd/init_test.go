@@ -36,6 +36,7 @@ func TestDetectLanguage(t *testing.T) {
 		"bun":  {"bun.lockb", static.BunExampleConfig},
 		"rust": {"Cargo.toml", static.RustExampleConfig},
 		"deno": {"deno.json", static.DenoExampleConfig},
+		"d": {"dub.json", static.Ldc2ExampleConfig},
 		"uv":   {"pyproject.toml", static.UVExampleConfig},
 		"go":   {"go.mod", static.GoExampleConfig}, // the file isn't actually used though, go is the default
 	} {
@@ -193,6 +194,7 @@ func TestInitExampleConfigsAreNotDeprecated(t *testing.T) {
 	checkExample(t, static.BunExampleConfig)
 	checkExample(t, static.DenoExampleConfig)
 	checkExample(t, static.RustExampleConfig)
+	checkExample(t, static.Ldc2ExampleConfig)
 }
 
 func TestSetupGitignore(t *testing.T) {

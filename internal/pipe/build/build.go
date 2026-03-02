@@ -26,6 +26,7 @@ import (
 	_ "github.com/goreleaser/goreleaser/v2/internal/builders/deno"
 	_ "github.com/goreleaser/goreleaser/v2/internal/builders/golang"
 	_ "github.com/goreleaser/goreleaser/v2/internal/builders/poetry"
+	_ "github.com/goreleaser/goreleaser/v2/internal/builders/ldc2"
 	_ "github.com/goreleaser/goreleaser/v2/internal/builders/rust"
 	_ "github.com/goreleaser/goreleaser/v2/internal/builders/uv"
 	_ "github.com/goreleaser/goreleaser/v2/internal/builders/zig"
